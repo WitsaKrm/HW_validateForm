@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form</title>
+<link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <form class="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username">
+      <div class="check-user" id="check"></div>
+      <label for="password">Password</label>
+      <input type="password" id="password">
+      <div class="check-pass" id="check"></div>
+      <select name="role" id="role">
+        <option value="" selected="" disabled="">Select Role</option>
+        <option value="buyer">Buyer</option>
+        <option value="seller">Seller</option>
+        <option value="visitor">Visitor</option>
+      </select>
+      <div class="check-option" id="check"></div>
+      <input type="submit" value="Login">
+      <hr>
+      <div class="success"></div>
+    <div class="user"></div>
+    <div class="pass"></div>
+    <div class="ro"></div>
+    </form>
+    <script src="./script.js"></script>
+</html>
