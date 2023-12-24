@@ -1,59 +1,26 @@
-body {
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
     background-color: #f5f5f5; 
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
     margin: 0;
   }
   
   .login-form {
-    background-color: #fff; 
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    margin: 10% 10% ;
-
+    width: 80%;
+    background: skyblue;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="password"],
+  .login-form > input,
   select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #d7d7d7;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  input[type="submit"] {
-    background-color: #fba94c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .check-user,
-  .check-pass,
-  .check-option {
-    color: #15202b; 
-    font-size: 13px;
-    margin-top: 5px;
-  }
-  
-  .success {
-    color: #5c332c;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  #inspect-element-top-layer {
-    display: none;
+    font-size: 20px;
   }
   

@@ -27,6 +27,7 @@ const validateInput = (inputObj) => {
   if (usernameEmpty || usernameInvalid) {
     checkUser.textContent =
       "ความยาว 4 ตัวอักษรขึ้นไป * ขึ้นต้นด้วยตัวอักษร ";
+      checkUser.style.color = "red"
     loginForm.elements.username.style.borderColor = "red";
   } else {
     checkUser.textContent = "";
@@ -36,6 +37,7 @@ const validateInput = (inputObj) => {
   if (passwordEmpty || passwordInvalid) {
     checkPass.textContent =
       "ความยาว 4 ตัวอักษรขึ้นไป * ต้องมีทั้งตัวเลขและตัวอักษร * ภาษาอังกฤษเท่านั้น";
+      checkPass.style.color = "red"
     loginForm.elements.password.style.borderColor = "red";
   } else {
     checkPass.textContent = "";
