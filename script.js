@@ -11,11 +11,13 @@ const validateInput = (inputObj) => {
   const cleanedUsername = inputObj.username.replace(/\s/g, "").trim();
   const cleanedPassword = inputObj.password.replace(/\s/g, "").trim();
   const role = inputObj.role;
+
   const isNotEmpty = (value) => value.trim() !== "";
   const isUsernameValid = (username) =>
     username.trim().length > 3 && !/^\d/.test(username);
   const isPasswordValid = (password) =>
     password.trim().length > 4 && /\d/.test(password) && /[a-zA-Z]/.test(password);
+
   const usernameEmpty = !isNotEmpty(cleanedUsername);
   const passwordEmpty = !isNotEmpty(cleanedPassword);
   const roleEmpty = !isNotEmpty(role);
@@ -23,9 +25,8 @@ const validateInput = (inputObj) => {
   const passwordInvalid = !isPasswordValid(cleanedPassword);
 
   if (usernameEmpty || usernameInvalid) {
-    checkUser.textContent =
-      "ความยาว 4 ตัวอักษรขึ้นไป * ขึ้นต้นด้วยตัวอักษร ";
-      checkUser.style.color = "red"
+    checkUser.textContent = "ความยาว 4 ตัวอักษรขึ้นไป * ขึ้นต้นด้วยตัวอักษร ";
+    checkUser.style.color = "red";
     loginForm.elements.username.style.borderColor = "red";
   } else {
     checkUser.textContent = "";
@@ -35,7 +36,7 @@ const validateInput = (inputObj) => {
   if (passwordEmpty || passwordInvalid) {
     checkPass.textContent =
       "ความยาว 4 ตัวอักษรขึ้นไป * ต้องมีทั้งตัวเลขและตัวอักษร * ภาษาอังกฤษเท่านั้น";
-      checkPass.style.color = "red"
+    checkPass.style.color = "red";
     loginForm.elements.password.style.borderColor = "red";
   } else {
     checkPass.textContent = "";
@@ -50,7 +51,13 @@ const validateInput = (inputObj) => {
     loginForm.elements.role.style.borderColor = "";
   }
 
-  if (!usernameEmpty && !usernameInvalid && !passwordEmpty && !passwordInvalid && !roleEmpty) {
+  if (
+    !usernameEmpty &&
+    !usernameInvalid &&
+    !passwordEmpty &&
+    !passwordInvalid &&
+    !roleEmpty
+  ) {
     const dataArray = [cleanedUsername, cleanedPassword, role];
     console.log(dataArray);
     sucCess.textContent = "Login successful";
