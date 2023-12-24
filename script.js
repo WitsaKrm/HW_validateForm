@@ -11,13 +11,11 @@ const validateInput = (inputObj) => {
   const cleanedUsername = inputObj.username.replace(/\s/g, "").trim();
   const cleanedPassword = inputObj.password.replace(/\s/g, "").trim();
   const role = inputObj.role;
-
   const isNotEmpty = (value) => value.trim() !== "";
   const isUsernameValid = (username) =>
     username.trim().length > 3 && !/^\d/.test(username);
   const isPasswordValid = (password) =>
     password.trim().length > 4 && /\d/.test(password) && /[a-zA-Z]/.test(password);
-
   const usernameEmpty = !isNotEmpty(cleanedUsername);
   const passwordEmpty = !isNotEmpty(cleanedPassword);
   const roleEmpty = !isNotEmpty(role);
